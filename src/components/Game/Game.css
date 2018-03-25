@@ -1,0 +1,9 @@
+.Game--title:first-letter  {
+    text-transform:capitalize;
+}
+
+.Game .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,25 @@
+.Score {
+    width:70px;
+    height:70px;
+    display: block;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.Score span {
+    width:100%;
+    text-align: center;
+    font-size:22px;
+    font-weight: bold;
+}
+
+.Score--white {
+    background: white;
+    color:black;
+}
+
+.Score--black {
+    background: black;
+    color:white;
+}

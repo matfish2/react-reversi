@@ -1,0 +1,23 @@
+.Cell {
+    width:50px;
+    height:50px;
+}
+
+.Cell--vacant {
+    width: 60px;
+    height:60px;
+    cursor:not-allowed;       
+}
+
+.Cell--occupied {
+    cursor:not-allowed;   
+}
+
+
+.Cell.Cell--allowed {
+    cursor:pointer !important;   
+}
+
+.Cell.Cell--allowed:hover {
+    background: #54AF2F;
+}
