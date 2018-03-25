@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Game from './components/Game/Game';
 import GameOver from './components/GameOver/GameOver';
+import Logo from './logo.png'
 import './App.css';
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
 
     return (
       <div className="App">
-      <img src="/logo.png" alt="reversi"/>
+      <img src={Logo} alt="reversi"/>
       {game}
       {gameOver}
       </div>
