@@ -1,6 +1,6 @@
 .Score {
-    width:70px;
-    height:70px;
+    width:120px;
+    height:120px;
     display: block;
     border-radius: 50%;
     display: flex;
@@ -10,7 +10,7 @@
 .Score span {
     width:100%;
     text-align: center;
-    font-size:22px;
+    font-size:40px;
     font-weight: bold;
 }
 
