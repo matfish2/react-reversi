@@ -1,3 +1,7 @@
+.Game--title {
+    padding: 10px;
+}
+
 .Game--title:first-letter  {
     text-transform:capitalize;
 }

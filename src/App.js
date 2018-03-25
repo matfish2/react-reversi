@@ -9,18 +9,25 @@ class App extends Component {
     super(props);
     this.state = {
       status:'active',
-      winner:null
+      winner:null, 
+      whiteScore:0,
+      blackScore:0
     }
   }
   
   render() {
     
     let game = this.state.status==='active'?<Game end={this.endGame.bind(this)}/>:''; 
-    let gameOver = this.state.status==='over'?<GameOver winner={this.state.winner} restart={this.restartGame.bind(this)}/>:'';  
+    let gameOver = this.state.status==='over'?<GameOver 
+    winner={this.state.winner} 
+    restart={this.restartGame.bind(this)}
+    white={this.state.whiteScore}    
+    black={this.state.blackScore}
+    />:'';  
 
     return (
       <div className="App">
-      <h1>Reversi</h1>
+      <img src="/logo.png" alt="reversi"/>
       {game}
       {gameOver}
       </div>
@@ -33,10 +40,12 @@ class App extends Component {
     })
   }
   
-  endGame(winner) {
+  endGame(winner, whiteScore, blackScore) {
     this.setState({
       status:'over',
-      winner
+      winner,
+      whiteScore,
+      blackScore
     })
   }
 }

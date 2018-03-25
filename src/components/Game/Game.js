@@ -198,7 +198,7 @@ class Game extends Component {
                         }, () => {
                             allowedCellsCount = this.calculateAllowedCells();
                             if (!allowedCellsCount) { // BOTH PLAYERS HAVE NO MOVES: GAME OVER
-                                this.props.end(this.winner());
+                                this.props.end(this.winner(), this.score('white'), this.score('black'));
                             }
                         });
                     }
