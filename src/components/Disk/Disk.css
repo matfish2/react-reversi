@@ -13,3 +13,7 @@
     -o-transition: background-color 1s linear;
     transition: background-color 1s linear;    
 }
+
+.Cell--newest .Disk {
+    border:2px solid yellow;
+}

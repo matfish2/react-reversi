@@ -18,7 +18,7 @@ class Board extends Component {
     }
 
     renderRow(row, x) {
-        return row.map((cell, y)=><Cell key={y} data={cell} reverse={this.props.reverse} player={this.props.player} position={[x,y]}/>)
+        return row.map((cell, y)=><Cell key={y} data={cell} newest={this.props.newest} reverse={this.props.reverse} player={this.props.player} position={[x,y]}/>)
     }
 
 }

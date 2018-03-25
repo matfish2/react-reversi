@@ -28,11 +28,16 @@ class Cell extends Component {
         }
     }
 
+    isNewest() {
+      return this.props.newest && this.props.newest[0] === this.props.position[0] && this.props.newest[1] === this.props.position[1];  
+    }
+
     classes() {
         let cls = 'Cell ';
         let cell = this.props.data;
         cls+= cell.disk?'Cell--occupied':'Cell--vacant';
         if (cell.canReverse.length) cls+=' Cell--allowed';
+        if (this.isNewest()) cls+=' Cell--newest';
 
         return cls;
     }

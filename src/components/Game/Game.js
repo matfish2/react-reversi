@@ -23,7 +23,8 @@ class Game extends Component {
             board: this.createBoard(),
             currentPlayer:'white',
             winner:null,
-            lostTurn: false
+            lostTurn: false,
+            newestDisk:null
         }
         
     }
@@ -41,7 +42,7 @@ class Game extends Component {
                     {this.lostTurn()}  
                 <div className="row">
                     <Score player="white" score={this.score('white')}/>
-                    <Board board={this.state.board} reverse={this.reverse.bind(this)} player={this.state.currentPlayer}/>
+                    <Board board={this.state.board} newest={this.state.newestDisk} reverse={this.reverse.bind(this)} player={this.state.currentPlayer}/>
                     <Score player="black" score={this.score('black')}/>                
                 </div> 
             </div>);
@@ -111,7 +112,7 @@ class Game extends Component {
                     board[x][y] = {
                         id: rowPos + (y+1),
                         disk: this.initialDisk(x+1, y+1),
-                        canReverse:[],
+                        canReverse:[]
                     };
                 }
             }
@@ -178,9 +179,10 @@ class Game extends Component {
             
             b[x][y].disk = this.state.currentPlayer;
             b[x][y].canReverse.forEach(cell=>b[cell.X][cell.Y].disk = this.state.currentPlayer);
-                        
+
             this.setState({
-                board:b
+                board:b,
+                newestDisk:[x,y]
             },()=>{
                 this.setState((prevState)=>{
                     return {
