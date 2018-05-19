@@ -1,4 +1,4 @@
-export const BOARD_DIMENSIONS = 4;
+export const BOARD_DIMENSIONS = 8;
 
 export const DIRECTIONS = [
     [0,1], // right
