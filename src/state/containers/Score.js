@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-// import { game } from '../actions';
 import Score from '../../components/Score/Score';
 
 const mapStateToProps = (state, ownProps) => ({

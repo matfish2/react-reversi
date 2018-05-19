@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-// import { game } from '../actions';
 import GameOver from '../../components/GameOver/GameOver';
 import {restart} from '../actions'
 
