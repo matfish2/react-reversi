@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import Score from '../../components/Score/Score';
 
 const mapStateToProps = (state, ownProps) => ({
-  score: state.game.score[ownProps.player],
+  score: state.score[ownProps.player],
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-//   onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
 })
 
 export default connect(

@@ -18,9 +18,9 @@ const Cell = ({data, newest, position, player, reverse, toggleHoverState}) => {
         return cls;
     }
     
-    const toggleHover = () => {
+    const toggleHover = (hovered) => {
         if (data.disk || !data.canReverse.length) return;
-        toggleHoverState();
+        toggleHoverState(hovered);
     }
     
     const diskColor = () => {
@@ -35,8 +35,8 @@ const Cell = ({data, newest, position, player, reverse, toggleHoverState}) => {
     
     return (
         <td className={classes()} 
-        onMouseEnter={toggleHover} 
-        onMouseLeave={toggleHover}  
+        onMouseEnter={toggleHover.bind(this, true)} 
+        onMouseLeave={toggleHover.bind(this, false)}  
         onClick={reverse}>
         <Disk color={diskColor()} />
         </td>

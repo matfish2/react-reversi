@@ -1,5 +1,5 @@
 import setAllowedCells from './set-allowed-cells';
-import { BOARD_DIMENSIONS } from '../../consts.js'
+import { BOARD_DIMENSIONS } from '../../../consts.js'
 
 /** create the initial board state */
   const initBoard = (currentPlayer) => {

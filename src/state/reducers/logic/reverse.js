@@ -15,6 +15,7 @@ const getScore = (player, board) => {
 const reverse = (state, x, y) => { 
             
     var b = state.board;
+    var originalPlayer = state.currentPlayer;
     
     if (!b[x][y].canReverse || !b[x][y].canReverse.length) return;
     
@@ -29,11 +30,10 @@ const reverse = (state, x, y) => {
     var board = setAllowedCells(b, currentPlayer);
 
     if (!board.allowedCellsCount) { // No moves possible
-        console.log(currentPlayer + " Cant move"); 
+
         currentPlayer = currentPlayer==='white'?'black':'white';
         board = setAllowedCells(b, currentPlayer); // check if the other player has any moves
         if (!board.allowedCellsCount) { // if both players don't have any moves the game is over
-        console.log(currentPlayer + " ALSO Cant move"); 
           
         return false;
         }
@@ -44,6 +44,7 @@ const reverse = (state, x, y) => {
         allowedCellsCount:board.allowedCellsCount,
         newestDisk:[x,y],
         currentPlayer,
+        lostTurn:currentPlayer===originalPlayer,
         score
     }
     

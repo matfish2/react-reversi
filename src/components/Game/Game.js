@@ -4,71 +4,30 @@ import Score from '../../state/containers/Score';
 import PropTypes from 'prop-types'
 
 import './Game.css';
-//this.lostTurn()}  
 
-const Game = ({currentPlayer, board}) => (<div className="Game container">
+const lostTurnText = (lostTurn, currentPlayer) => {
+   if (!lostTurn) return '';
+
+   const player = currentPlayer==='white'?'Black':'White';
+
+   return <p>{`${player} Lost his turn`}</p>
+
+}
+
+const Game = ({currentPlayer, board, lostTurn}) => (<div className="Game container">
 <h3 className="Game--title">{currentPlayer}'s turn</h3>
+{lostTurnText(lostTurn, currentPlayer)}
 <div className="row">
 <Score player="white"/>
 <Board board={board}/>
 <Score player="black" />                
 </div> 
-</div>);
-        
-    //     winner() {
-    //         var whiteScore = this.score('white');
-    //         var blackScore = this.score('black');
+</div>)
 
-    //         if (whiteScore > blackScore) return 'white';
+Game.propTypes = {
+    currentPlayer: PropTypes.string.isRequired,
+    board: PropTypes.array.isRequired,
+    lostTurn: PropTypes.bool.isRequired
+}
 
-    //         if (whiteScore===blackScore) return 'draw';
-
-    //         return 'black';
-    //     }
-
-    //     lostTurn() {
-    //         if (!this.props.lostTurn) return '';
-
-    //         return <h4>{this.opponent()} lost his turn</h4>
-    //     }
-
-    //     opponent() {
-    //         return this.props.currentPlayer==='white'?'Black':'White';
-    //     }
-
-    //     score(player) {
-    //         var score = 0;
-            
-    //         this.props.board.forEach(row=>{
-    //             row.forEach(cell=>{
-    //                 if (cell.disk===player) score++;
-    //             });
-    //         })
-            
-    //         return score;
-    //     }
-    
-
-    //     getCurrentPlayer() {
-
-    //         // check whether to opponent has any moves. Count only, without assigning the actual cells
-    //         var allowedCellsCount = this.calculateAllowedCells(); 
-            
-    //         if (!allowedCellsCount) {
-    //             this.setState({
-    //                 lostTurn:true
-    //             });
-    
-    //             return this.state.currentPlayer;
-            
-    //         }
-            
-    //         return this.state.currentPlayer==='white'?'black':'white';
-    //     }
-    // }
-    
-    Game.propTypes = {
-        currentPlayer: PropTypes.string.isRequired
-      }
-
-    export default Game;
+export default Game;

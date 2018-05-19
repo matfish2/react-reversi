@@ -1,5 +1,6 @@
-const BOARD_DIMENSIONS = 8;
-const DIRECTIONS = [
+export const BOARD_DIMENSIONS = 4;
+
+export const DIRECTIONS = [
     [0,1], // right
     [0,-1], // left
     [-1,0], // up
@@ -10,4 +11,8 @@ const DIRECTIONS = [
     [1,-1] // diagonal - down left            
 ];
 
-export { BOARD_DIMENSIONS, DIRECTIONS };
+export const ACTIONS = {
+    RESTART:'RESTART',
+    REVERSE:'REVERSE',
+    TOGGLE_CELL_HOVER:'TOGGLE_CELL_HOVER'
+}

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 // import { game } from '../actions';
 import GameOver from '../../components/GameOver/GameOver';
+import {restart} from '../actions'
 
 const getWinner = (score) => {
   if (score.white>score.black) return 'White';
@@ -9,14 +10,12 @@ const getWinner = (score) => {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  winner:getWinner(state.game.score),
-  score:state.game.score
+  winner:getWinner(state.score),
+  score:state.score
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  restart:() => dispatch({
-       type:'RESTART_GAME' 
-    })
+  restart:() => dispatch(restart())
 })
 
 export default connect(

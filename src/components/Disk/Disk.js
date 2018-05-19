@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Disk.css';
 
-class Disk extends Component {
-    
-    render() {
-        return (
-          <span className="Disk" style={this.color()}></span>
-        );
-    }
-
-    color() {
+const style = (color) => {
         return {
-            backgroundColor:this.props.color
+            backgroundColor:color
         }
-    }
 }
+
+const Disk = ({color})=> (
+    <span className="Disk" style={style(color)}></span>
+)
 
 export default Disk;

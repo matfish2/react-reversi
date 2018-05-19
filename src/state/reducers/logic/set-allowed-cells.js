@@ -1,4 +1,4 @@
-import { BOARD_DIMENSIONS, DIRECTIONS } from '../../consts.js'
+import { BOARD_DIMENSIONS, DIRECTIONS } from '../../../consts.js'
 
 const canReverse = (b, x, y, currentPlayer) => {
             

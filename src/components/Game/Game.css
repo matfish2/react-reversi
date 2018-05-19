@@ -1,5 +1,7 @@
 .Game--title {
     padding: 10px;
+    margin-bottom: 0;
+    padding-bottom: 3px;
 }
 
 .Game--title:first-letter  {
