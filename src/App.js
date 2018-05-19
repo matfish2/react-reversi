@@ -1,30 +1,14 @@
-import React, { Component } from 'react';
-import Game from './components/Game/Game';
-import GameOver from './components/GameOver/GameOver';
+import React from 'react';
+import Game from './state/containers/Game';
+import GameOver from './state/containers/GameOver';
 import Logo from './logo.png'
 import './App.css';
 
-class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      status:'active',
-      winner:null, 
-      whiteScore:0,
-      blackScore:0
-    }
-  }
-  
-  render() {
+const App = ({status, winner, whiteScore, blackScore}) => {
+
+    let game = status==='active'?<Game/>:''; 
     
-    let game = this.state.status==='active'?<Game end={this.endGame.bind(this)}/>:''; 
-    let gameOver = this.state.status==='over'?<GameOver 
-    winner={this.state.winner} 
-    restart={this.restartGame.bind(this)}
-    white={this.state.whiteScore}    
-    black={this.state.blackScore}
-    />:'';  
+    let gameOver = status==='over'?<GameOver />:'';  
 
     return (
       <div className="App">
@@ -34,21 +18,6 @@ class App extends Component {
       </div>
     );
   }
-  
-  restartGame() {
-    this.setState({
-      status:'active',
-    })
-  }
-  
-  endGame(winner, whiteScore, blackScore) {
-    this.setState({
-      status:'over',
-      winner,
-      whiteScore,
-      blackScore
-    })
-  }
-}
 
+  
 export default App;

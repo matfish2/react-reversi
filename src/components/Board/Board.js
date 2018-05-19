@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Board.css';
-import Cell from '../Cell/Cell';
+import Cell from '../../state/containers/Cell';
 
-class Board extends Component {
+const Board = ({board, newest, player}) => {
     
-    render() {
-        
+    const renderRow = (row, x) => {
+        return row.map((cell, y)=><Cell key={y} data={cell} newest={newest} position={[x,y]}/>)
+    }
+
         return (
             <div className="Board">
                 <table className="table table-bordered">
                     <tbody> 
-                    {this.props.board.map((row, x)=><tr key={x}>{this.renderRow(row, x)}</tr>)}
+                    {board.map((row, x)=><tr key={x}>{renderRow(row, x)}</tr>)}
                     </tbody>
                 </table>
         </div>
         );
-    }
-
-    renderRow(row, x) {
-        return row.map((cell, y)=><Cell key={y} data={cell} newest={this.props.newest} reverse={this.props.reverse} player={this.props.player} position={[x,y]}/>)
-    }
-
+   
+   
 }
 
 export default Board;
