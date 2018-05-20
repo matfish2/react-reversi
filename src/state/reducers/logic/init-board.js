@@ -23,7 +23,7 @@ import { BOARD_DIMENSIONS } from '../../../consts.js'
     return setAllowedCells(board, currentPlayer);
 }
 
-/** set initial disks black: black at 4,4;5,5; white at 4,5; 5,4; */
+/** set initial disks */
 const initialDisk = (x, y) => {
     var HALF = BOARD_DIMENSIONS / 2;
     if ((x===HALF && y===HALF) || (x===HALF+1 && y===HALF+1)) return 'black';

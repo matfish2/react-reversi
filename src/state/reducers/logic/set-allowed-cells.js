@@ -43,7 +43,7 @@ const opponent = (currentPlayer) => {
     return currentPlayer==='white'?'black':'white';
 }
 
-export default (board, currentPlayer) => {
+export default setAllowedCells(board, currentPlayer) => {
        
         var allowedCellsCount = 0;
         

@@ -2,6 +2,9 @@ import React from 'react';
 import './Disk.css';
 
 const style = (color) => {
+
+    if (!color) return '';
+    
         return {
             backgroundColor:color
         }

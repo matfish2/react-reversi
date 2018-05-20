@@ -2,7 +2,7 @@ import reverse from './logic/reverse'
 import {ACTIONS} from '../../consts'
 import initialState from './initial-state';
 
-var game = (state = initialState, action) => {
+var gameReducer = (state = initialState, action) => {
     switch (action.type) {
         case ACTIONS.RESTART:
         
@@ -35,4 +35,4 @@ var game = (state = initialState, action) => {
     }
 }
 
-export default game
+export default gameReducer

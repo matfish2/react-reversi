@@ -1,8 +1,6 @@
-# React Reversi
+# React Reversi - Redux Implementation
 
-See it in action on [Github Pages](https://matfish2.github.io/react-reversi/)
-
-# Installation
+## Installation
 
 ```
 git clone https://github.com/matfish2/react-reversi
