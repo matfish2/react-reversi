@@ -10,3 +10,7 @@ cd react-reversi
 npm install 
 npm start
 ```
+
+## Redux Implementation
+
+The redux implementation is under the `redux` branch
